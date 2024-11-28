@@ -1,6 +1,13 @@
 import React from 'react';
-import Navigation from './navigation/Navigation';
+import { StatusBar } from 'react-native';
+import Navigation from './Navigation/Navigation';
+import { WatchlistProvider } from './context/WatchlistContext';
 
 export default function App() {
-  return <Navigation />;
+  return (
+    <WatchlistProvider>
+     <StatusBar barStyle="light-content" backgroundColor="#171717" />
+      <Navigation />
+    </WatchlistProvider>
+  );
 }
